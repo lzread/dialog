@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Javascript Dialog examples</title>
+	<link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/dialog.css">
+	<link rel="stylesheet" href="lib/prism/themes/prism.css">
+	<script src="lib/prism/js/prism.js"></script>
+</head>
+
+<body>
+	
+
+	<nav class="navbar navbar-dark bg-dark sticky-top">
+		<div class="container">
+			<a class="navbar-brand" href="#">Javascript Dialog</a>
+			<a class="github-link" href="https://github.com/lzread/dialog">Github</a>
+		</div>
+	</nav>
+	<div class="container">
+
+		<h5>快速开始</h5>
+
+		<div class="block">
+			<h6>head 引入样式</h6>
+<pre><code class="language-html">&lt;link rel="stylesheet" href="dialog.min.css"&gt;</code></pre>
+			<h6>页面底部引入 JS 文件</h6>
+<pre><code class="language-html">&lt;script&gt; src="dialog.min.js"&lt;/script&gt;</code></pre>
+			<h6>结构</h6>
+<pre><code class="language-html">&lt;div id="demoA01"&gt;内容&lt;/div&gt;</code></pre>
+			<h6>调用</h6>
+<pre><code class="language-javascript">var dialogA01 = new Dialog(document.querySelector('#demoA01'));</code></pre>
+		</div>
+
+
+		<h5>配置</h5>
+
+		<div class="block">
+			<div class="table-responsive">
+				<table class="table table-striped table-condensed table-bordered">
+					<thead>
+						<tr>
+							<th>属性</th>
+							<th>名称</th>
+							<th>值类型</th>
+							<th>默认值</th>
+							<th>备注</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>title</td>
+							<td>窗口标题</td>
+							<td><code>String</code></td>
+							<td><code>提示</code></td>
+							<td><code></code></td>
+						</tr>
+						<tr>
+							<td>width</td>
+							<td>窗口宽度</td>
+							<td><code>String</code></td>
+							<td><code>500px</code></td>
+							<td><code></code></td>
+						</tr>
+						<tr>
+							<td>height</td>
+							<td>窗口高度</td>
+							<td><code>String</code></td>
+							<td><code>auto</code></td>
+							<td><code></code></td>
+						</tr>
+						<tr>
+							<td>fullscreen</td>
+							<td>是否全屏显示</td>
+							<td><code>Boolean</code></td>
+							<td><code>false</code></td>
+							<td><code></code></td>
+						</tr>
+						<tr>
+							<td>customClass</td>
+							<td>自定义Class</td>
+							<td><code>String</code></td>
+							<td><code>Null</code></td>
+							<td><code></code></td>
+						</tr>
+						<tr>
+							<td>showClose</td>
+							<td>提示</td>
+							<td><code>Boolean</code></td>
+							<td><code>是否显示关闭按钮</code></td>
+							<td><code></code></td>
+						</tr>
+						<tr>
+							<td>showToggle</td>
+							<td>是否显示最大化、最小化按钮</td>
+							<td><code>Boolean</code></td>
+							<td><code>false</code></td>
+							<td><code></code></td>
+						</tr>
+						<tr>
+							<td>modal</td>
+							<td>是否显示遮罩层</td>
+							<td><code>Boolean</code></td>
+							<td><code>false</code></td>
+							<td><code></code></td>
+						</tr>
+						<tr>
+							<td>drag</td>
+							<td>是否支持拖动</td>
+							<td><code>Boolean</code></td>
+							<td><code>false</code></td>
+							<td><code></code></td>
+						</tr>
+						<tr>
+							<td>closeOnClickModal</td>
+							<td>是否支持点击遮罩层关闭</td>
+							<td><code>Boolean</code></td>
+							<td><code>false</code></td>
+							<td><code></code></td>
+						</tr>
+						<tr>
+							<td>footer</td>
+							<td>底部是否显示</td>
+							<td><code>Boolean</code></td>
+							<td><code>false</code></td>
+							<td><code></code></td>
+						</tr>
+						<tr>
+							<td>cancelButtonText</td>
+							<td>取消按钮文本</td>
+							<td><code>String</code></td>
+							<td><code>取消</code></td>
+							<td><code></code></td>
+						</tr>
+						<tr>
+							<td>submitButtonText</td>
+							<td>确认按钮文本</td>
+							<td><code>String</code></td>
+							<td><code>确定</code></td>
+							<td><code></code></td>
+						</tr>
+						<tr>
+							<td>cancelCallBack</td>
+							<td>取消按钮回调函数</td>
+							<td><code>Function</code></td>
+							<td><code>Null</code></td>
+							<td><code></code></td>
+						</tr>
+						<tr>
+							<td>submitCallBack</td>
+							<td>确认按钮回调函数</td>
+							<td><code>Function</code></td>
+							<td><code>Null</code></td>
+							<td><code></code></td>
+						</tr>
+						<tr>
+							<td>beforeClose</td>
+							<td>关闭前回调</td>
+							<td><code>Function</code></td>
+							<td><code>Null</code></td>
+							<td><code></code></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<h5>实例</h5>
+
+		<div class="block">
+			<h6>默认配置</h6>
+			<pre>
+<code class="language-javascript">var dialogA01 = new Dialog(document.querySelector('#demoA01'));</code>
+</pre>
+			<button type="button" class="btn btn-primary" onclick="dialogA01.show()">预览</button>
+			<hr>
+			<h6>默认打开全屏显示</h6>
+			<pre><code class="language-javascript">var dialogA02 = new Dialog(document.querySelector('#demoA02'), {
+	fullscreen: true
+});
+</code></pre>
+			<button type="button" class="btn btn-primary" onclick="dialogA02.show()">预览</button>
+			<hr>
+			<h6>支持最大化</h6>
+			<pre><code class="language-javascript">var dialogA03 = new Dialog(document.querySelector('#demoA03'), {
+	showToggle: true
+});
+</code></pre>
+			<button type="button" class="btn btn-primary" onclick="dialogA03.show()">预览</button>
+			<hr>
+
+			<h6>支持拖动</h6>
+			<pre><code class="language-javascript">var dialogA04 = new Dialog(document.querySelector('#demoA04'), {
+	drag: true
+});
+</code></pre>
+			<button type="button" class="btn btn-primary" onclick="dialogA04.show()">预览</button>
+			<hr>
+			<h6>自定义尺寸</h6>
+			<pre><code class="language-javascript">var dialogA05 = new Dialog(document.querySelector('#demoA05'), {
+	width:'800px',
+	height:'600px'
+});
+</code></pre>
+			<button type="button" class="btn btn-primary" onclick="dialogA05.show()">预览</button>
+			<hr>
+			<h6>隐藏底部按钮</h6>
+			<pre><code class="language-javascript">var dialogA06 = new Dialog(document.querySelector('#demoA06'), {
+	footer:false
+});
+</code></pre>
+			<button type="button" class="btn btn-primary" onclick="dialogA06.show()">预览</button>
+			<hr>
+			<h6>不显示遮罩层</h6>
+			<pre><code class="language-javascript">var dialogA07 = new Dialog(document.querySelector('#demoA07'), {
+	modal: false
+});
+</code></pre>
+			<button type="button" class="btn btn-primary" onclick="dialogA07.show()">预览</button>
+			<hr>
+			<h6>自定义Class</h6>
+			<pre><code class="language-javascript">var dialogA08 = new Dialog(document.querySelector('#demoA08'), {
+	customClass: 'myDialog'
+});
+</code></pre>
+			<button type="button" class="btn btn-primary" onclick="dialogA08.show()">预览</button>
+			<hr>
+			<h6>自定义标题</h6>
+			<pre><code class="language-javascript">var dialogA09 = new Dialog(document.querySelector('#demoA09'), {
+	title: '添加收货地址'
+});
+</code></pre>
+			<button type="button" class="btn btn-primary" onclick="dialogA09.show()">预览</button>
+			<hr>
+			<h6>点击遮罩层关闭窗口</h6>
+			<pre><code class="language-javascript">var dialogA10 = new Dialog(document.querySelector('#demoA10'), {
+	closeOnClickModal: true
+});
+</code></pre>
+			<button type="button" class="btn btn-primary" onclick="dialogA10.show()">预览</button>
+			<hr>
+			<h6>自定义底部按钮文字</h6>
+			<pre><code class="language-javascript">var dialogA11 = new Dialog(document.querySelector('#demoA11'), {
+	submitButtonText: "yes",
+	cancelButtonText: "no"
+});
+</code></pre>
+			<button type="button" class="btn btn-primary" onclick="dialogA11.show()">预览</button>
+			<hr>
+			<h6>底部按钮事件</h6>
+			<pre><code class="language-javascript">var dialogA12 = new Dialog(document.querySelector('#demoA12'), {
+	cancelCallBack: function (element) {
+		alert('点击了取消按钮');
+		//return true 关闭窗口
+		return false;
+	},
+	submitCallBack: function (element) {
+		alert('点击了确认按钮');
+		//return true 关闭窗口
+		return false;
+	}
+});
+</code></pre>
+			<button type="button" class="btn btn-primary" onclick="dialogA12.show()">预览</button>
+			<h6>关闭窗口前执行的方法</h6>
+			<pre><code class="language-javascript">var dialogA13 = new Dialog(document.querySelector('#demoA13'), {
+	beforeClose: function (element) {
+		alert('窗口关闭前执行');
+		//return true 关闭窗口
+		return false;
+	}
+});</code></pre>
+			<button type="button" class="btn btn-primary" onclick="dialogA13.show()">预览</button>
+			<hr>
+		</div>
+
+
+
+	</div>
+
+
+	<div id="demoA01" style="display:none">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto iste qui porro necessitatibus numquam?
+			Aliquid, placeat. Odio, accusamus ea rem nesciunt facilis earum dolores veniam autem sequi rerum provident
+			pariatur.</p>
+	</div>
+
+	<div id="demoA02" style="display:none">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto iste qui porro necessitatibus numquam?
+			Aliquid, placeat. Odio, accusamus ea rem nesciunt facilis earum dolores veniam autem sequi rerum provident
+			pariatur.</p>
+	</div>
+
+	<div id="demoA03" style="display:none">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto iste qui porro necessitatibus numquam?
+			Aliquid, placeat. Odio, accusamus ea rem nesciunt facilis earum dolores veniam autem sequi rerum provident
+			pariatur.</p>
+	</div>
+
+	<div id="demoA04" style="display:none">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto iste qui porro necessitatibus numquam?
+			Aliquid, placeat. Odio, accusamus ea rem nesciunt facilis earum dolores veniam autem sequi rerum provident
+			pariatur.</p>
+	</div>
+
+	<div id="demoA05" style="display:none">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto iste qui porro necessitatibus numquam?
+			Aliquid, placeat. Odio, accusamus ea rem nesciunt facilis earum dolores veniam autem sequi rerum provident
+			pariatur.</p>
+	</div>
+
+	<div id="demoA06" style="display:none">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto iste qui porro necessitatibus numquam?
+			Aliquid, placeat. Odio, accusamus ea rem nesciunt facilis earum dolores veniam autem sequi rerum provident
+			pariatur.</p>
+	</div>
+
+	<div id="demoA07" style="display:none">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto iste qui porro necessitatibus numquam?
+			Aliquid, placeat. Odio, accusamus ea rem nesciunt facilis earum dolores veniam autem sequi rerum provident
+			pariatur.</p>
+	</div>
+
+	<div id="demoA08" style="display:none">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto iste qui porro necessitatibus numquam?
+			Aliquid, placeat. Odio, accusamus ea rem nesciunt facilis earum dolores veniam autem sequi rerum provident
+			pariatur.</p>
+	</div>
+
+	<div id="demoA09" style="display:none">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto iste qui porro necessitatibus numquam?
+			Aliquid, placeat. Odio, accusamus ea rem nesciunt facilis earum dolores veniam autem sequi rerum provident
+			pariatur.</p>
+	</div>
+
+	<div id="demoA10" style="display:none">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto iste qui porro necessitatibus numquam?
+			Aliquid, placeat. Odio, accusamus ea rem nesciunt facilis earum dolores veniam autem sequi rerum provident
+			pariatur.</p>
+	</div>
+
+	<div id="demoA11" style="display:none">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto iste qui porro necessitatibus numquam?
+			Aliquid, placeat. Odio, accusamus ea rem nesciunt facilis earum dolores veniam autem sequi rerum provident
+			pariatur.</p>
+	</div>
+
+	<div id="demoA12" style="display:none">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto iste qui porro necessitatibus numquam?
+			Aliquid, placeat. Odio, accusamus ea rem nesciunt facilis earum dolores veniam autem sequi rerum provident
+			pariatur.</p>
+	</div>
+
+	<div id="demoA13" style="display:none">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto iste qui porro necessitatibus numquam?
+			Aliquid, placeat. Odio, accusamus ea rem nesciunt facilis earum dolores veniam autem sequi rerum provident
+			pariatur.</p>
+	</div>
+
+
+
+
+	<script src="js/dialog.js"></script>
+
+	<script>
+		var dialogA01 = new Dialog(document.querySelector('#demoA01'));
+		var dialogA02 = new Dialog(document.querySelector('#demoA02'), {
+			fullscreen: true
+		});
+		var dialogA03 = new Dialog(document.querySelector('#demoA03'), {
+			showToggle: true
+		});
+		var dialogA04 = new Dialog(document.querySelector('#demoA04'), {
+			drag: true
+		});
+		var dialogA05 = new Dialog(document.querySelector('#demoA05'), {
+			width: '800px',
+			height: '600px'
+		});
+		var dialogA06 = new Dialog(document.querySelector('#demoA06'), {
+			footer: false
+		});
+		var dialogA07 = new Dialog(document.querySelector('#demoA07'), {
+			modal: false
+		});
+		var dialogA08 = new Dialog(document.querySelector('#demoA08'), {
+			customClass: 'myDialog'
+		});
+		var dialogA09 = new Dialog(document.querySelector('#demoA09'), {
+			title: '添加收货地址'
+		});
+		var dialogA10 = new Dialog(document.querySelector('#demoA10'), {
+			closeOnClickModal: true
+		});
+		var dialogA11 = new Dialog(document.querySelector('#demoA11'), {
+			submitButtonText: "yes",
+			cancelButtonText: "no"
+		});
+		var dialogA12 = new Dialog(document.querySelector('#demoA12'), {
+			cancelCallBack: function (element) {
+				alert('点击了取消按钮');
+				return false;
+			},
+			submitCallBack: function (element) {
+				alert('点击了确认按钮');
+				return false;
+			}
+		});
+		var dialogA13 = new Dialog(document.querySelector('#demoA13'), {
+			beforeClose: function (element) {
+				alert('窗口关闭前执行');
+				return false;
+			}
+		});
+
+		/*
+		var dialogA = new Dialog(document.querySelector('#demo1'), {
+			title: "demo1",
+			width: '50%',
+			height: '400px',
+			customClass: "_dl",
+			drag: false,
+			footer: false,
+			closeOnClickModal: true,
+		});
+
+		var dialogB = new Dialog(document.querySelector('#demo2'));
+
+		var dialogC = new Dialog(document.querySelector('#demo3'), {
+			showToggle: true,
+			width: '800',
+			height: '400',
+		});
+		*/
+
+	</script>
+</body>
+
+</html>

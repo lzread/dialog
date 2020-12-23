@@ -1,0 +1,108 @@
+.__dialog {
+    display: none;
+}
+
+
+.__dialog-mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100001;
+    background-color: rgba(51, 51, 51, 0.75);
+}
+
+.__dialog-container {
+    background-color: #fff;
+    position: fixed;
+    z-index: 100002;
+    border: 1px solid #e6e6e6;
+    min-width: 300px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    animation-duration: .15s;
+    animation-name: __slideInUp;
+}
+
+.__dialog-header {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    flex-grow: 0;
+}
+
+.__dialog-header-title {
+    padding: 0 15px;
+    flex-grow: 1;
+    width: auto;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.__dialog-button {
+    cursor: pointer;
+}
+
+
+.__dialog-button[data-dialog-action="toogle"] {
+    width: 40px;
+    height: 50px;
+    background: center no-repeat url(../images/maximize.svg);
+    background-size: 20px;
+}
+
+.__dialog-button[data-dialog-action="toogle"].isActive {
+    background: center no-repeat url(../images/minimize.svg);
+    background-size: 20px;
+}
+
+.__dialog-button[data-dialog-action="close"] {
+    width: 40px;
+    height: 50px;
+    background: center no-repeat url(../images/close.svg);
+    background-size: 20px;
+}
+
+.__dialog-body {
+    box-sizing: border-box;
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.__dialog-body-inner {
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+.__dialog-footer {
+    box-sizing: border-box;
+    flex-grow: 0;
+}
+
+.__dialog-footer-inner {
+    box-sizing: border-box;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.__dialog-footer-inner .__dialog-button {
+    padding: 10px 20px;
+}
+
+@keyframes __slideInUp {
+    0% {
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+        visibility: visible
+    }
+
+    to {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+}

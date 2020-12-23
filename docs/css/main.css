@@ -1,0 +1,25 @@
+h5,
+h6 {
+    margin: 20px 0;
+}
+
+h5 {
+    border-bottom: 3px solid #eee;
+    padding: 0 0 10px 0;
+}
+
+.github-link {
+    color: #fff;
+}
+
+.github-link:hover {
+    color: #ccc;
+}
+
+.block {
+    margin-bottom: 50px;
+}
+
+.myDialog .__dialog-container {
+    border: 10px solid rgba(51, 51, 51, 0.5);
+}
