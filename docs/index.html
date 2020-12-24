@@ -13,27 +13,34 @@
 </head>
 
 <body>
-	
+
 
 	<nav class="navbar navbar-dark bg-dark sticky-top">
 		<div class="container">
-			<a class="navbar-brand" href="#">Javascript Dialog</a>
+			<a class="navbar-brand" href="#">Javascript Dialog <small>v1.0.0</small></a>
 			<a class="github-link" href="https://github.com/lzread/dialog">Github</a>
 		</div>
 	</nav>
 	<div class="container">
 
+		<h5>特点</h5>
+		<div class="block">
+			<p>零依赖（原生JS实现，不依赖于任何库）</p>
+			<p>完全免费开源 </p>
+			<p>使用 rollup.js 打包</p>
+		</div>
+
 		<h5>快速开始</h5>
 
 		<div class="block">
 			<h6>head 引入样式</h6>
-<pre><code class="language-html">&lt;link rel="stylesheet" href="dialog.min.css"&gt;</code></pre>
+			<pre><code class="language-html">&lt;link rel="stylesheet" href="dialog.min.css"&gt;</code></pre>
 			<h6>页面底部引入 JS 文件</h6>
-<pre><code class="language-html">&lt;script&gt; src="dialog.min.js"&lt;/script&gt;</code></pre>
+			<pre><code class="language-html">&lt;script&gt; src="dialog.min.js"&lt;/script&gt;</code></pre>
 			<h6>结构</h6>
-<pre><code class="language-html">&lt;div id="demoA01"&gt;内容&lt;/div&gt;</code></pre>
+			<pre><code class="language-html">&lt;div id="demoA01" style="display:none;" &gt;内容&lt;/div&gt;</code></pre>
 			<h6>调用</h6>
-<pre><code class="language-javascript">var dialogA01 = new Dialog(document.querySelector('#demoA01'));</code></pre>
+			<pre><code class="language-javascript">var dialogA01 = new Dialog(document.querySelector('#demoA01'));</code></pre>
 		</div>
 
 
@@ -281,7 +288,10 @@
 
 
 	</div>
-
+	<footer>
+		<p>MIT</p>
+		<p>Copyright &copy; lzread 2020 all right reserved</p>
+	</footer>
 
 	<div id="demoA01" style="display:none">
 		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto iste qui porro necessitatibus numquam?
@@ -361,6 +371,8 @@
 			pariatur.</p>
 	</div>
 
+	
+
 
 
 
@@ -416,26 +428,6 @@
 				return false;
 			}
 		});
-
-		/*
-		var dialogA = new Dialog(document.querySelector('#demo1'), {
-			title: "demo1",
-			width: '50%',
-			height: '400px',
-			customClass: "_dl",
-			drag: false,
-			footer: false,
-			closeOnClickModal: true,
-		});
-
-		var dialogB = new Dialog(document.querySelector('#demo2'));
-
-		var dialogC = new Dialog(document.querySelector('#demo3'), {
-			showToggle: true,
-			width: '800',
-			height: '400',
-		});
-		*/
 
 	</script>
 </body>
