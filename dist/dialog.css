@@ -5,157 +5,170 @@
  * Copyright 2020-present lzread
  * Released under the MIT license
  *
- * Date: 2020-12-22T01:34:21.910Z
+ * Date: 2020-12-25T06:49:18.196Z
  */
 
+
 .__dialog {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  display: none;
+    display: none;
 }
+
 
 .__dialog-mask {
-  background-color: rgba(51, 51, 51, 0.75);
-  height: 100%;
-  left: 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 100001;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100001;
+    background-color: rgba(51, 51, 51, 0.75);
 }
+
 
 .__dialog-container {
-  -webkit-animation-duration: 0.15s;
-  animation-duration: 0.15s;
-  -webkit-animation-name: __slideinup;
-  animation-name: __slideInUp;
-  background-color: #fff;
-  border: 1px solid #e6e6e6;
-  -webkit-box-direction: normal;
-  -webkit-box-orient: vertical;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-height: 200px;
-  min-width: 300px;
-  position: fixed;
-  z-index: 100002;
+    background-color: #fff;
+    position: fixed;
+    z-index: 100002;
+    border: 1px solid #e6e6e6;
+    min-width: 300px;
+    min-height: 200px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-animation-duration: .15s;
+            animation-duration: .15s;
+    -webkit-animation-name: __slideInUp;
+            animation-name: __slideInUp;
 }
+
 
 .__dialog-header {
-  align-items: center;
-  -webkit-box-align: center;
-  -webkit-box-flex: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-  flex-grow: 0;
-  -ms-flex-positive: 0;
-  height: 50px;
+    height: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
 }
+
 
 .__dialog-header-title {
-  -webkit-box-flex: 1;
-  flex-grow: 1;
-  -ms-flex-positive: 1;
-  overflow: hidden;
-  padding: 0 10px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: auto;
+    padding: 0 15px;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    width: auto;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
+
 
 .__dialog-button {
-  cursor: pointer;
+    cursor: pointer;
 }
+
 
 .__dialog-button[data-dialog-action="toogle"] {
-  background: center no-repeat url("data:image/svg+xml,%3C%3Fxml version%3D%221.0%22 standalone%3D%22no%22%3F%3E%3C!DOCTYPE svg PUBLIC %22-%2F%2FW3C%2F%2FDTD SVG 1.1%2F%2FEN%22 %22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg t%3D%221608519641248%22 class%3D%22icon%22 viewBox%3D%220 0 1024 1024%22 version%3D%221.1%22 xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 p-id%3D%223090%22 width%3D%2232%22 height%3D%2232%22 xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%3Cdefs%3E%3Cstyle type%3D%22text%2Fcss%22%3E%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cpath d%3D%22M213.333 213.333v128a42.667 42.667 0 1 1-85.333 0V170.667A42.667 42.667 0 0 1 170.667 128h170.666a42.667 42.667 0 1 1 0 85.333h-128z m0 597.334h128a42.667 42.667 0 0 1 0 85.333H170.667A42.667 42.667 0 0 1 128 853.333V682.667a42.667 42.667 0 0 1 85.333 0v128z m597.334-597.334h-128a42.667 42.667 0 0 1 0-85.333h170.666A42.667 42.667 0 0 1 896 170.667v170.666a42.667 42.667 0 0 1-85.333 0v-128z m0 597.334v-128a42.667 42.667 0 0 1 85.333 0v170.666A42.667 42.667 0 0 1 853.333 896H682.667a42.667 42.667 0 0 1 0-85.333h128z%22 p-id%3D%223091%22 fill%3D%22%23515151%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E");
-  background-size: 20px;
-  height: 50px;
-  width: 40px;
+    width: 40px;
+    height: 50px;
+    background: center no-repeat url("data:image/svg+xml,%3C%3Fxml version%3D%221.0%22 standalone%3D%22no%22%3F%3E%3C!DOCTYPE svg PUBLIC %22-%2F%2FW3C%2F%2FDTD SVG 1.1%2F%2FEN%22 %22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg t%3D%221608519641248%22 class%3D%22icon%22 viewBox%3D%220 0 1024 1024%22 version%3D%221.1%22 xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 p-id%3D%223090%22 width%3D%2232%22 height%3D%2232%22 xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%3Cdefs%3E%3Cstyle type%3D%22text%2Fcss%22%3E%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cpath d%3D%22M213.333 213.333v128a42.667 42.667 0 1 1-85.333 0V170.667A42.667 42.667 0 0 1 170.667 128h170.666a42.667 42.667 0 1 1 0 85.333h-128z m0 597.334h128a42.667 42.667 0 0 1 0 85.333H170.667A42.667 42.667 0 0 1 128 853.333V682.667a42.667 42.667 0 0 1 85.333 0v128z m597.334-597.334h-128a42.667 42.667 0 0 1 0-85.333h170.666A42.667 42.667 0 0 1 896 170.667v170.666a42.667 42.667 0 0 1-85.333 0v-128z m0 597.334v-128a42.667 42.667 0 0 1 85.333 0v170.666A42.667 42.667 0 0 1 853.333 896H682.667a42.667 42.667 0 0 1 0-85.333h128z%22 p-id%3D%223091%22 fill%3D%22%23515151%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E");
+    background-size: 20px;
 }
+
 
 .__dialog-button[data-dialog-action="toogle"].isActive {
-  background: center no-repeat url("data:image/svg+xml,%3C%3Fxml version%3D%221.0%22 standalone%3D%22no%22%3F%3E%3C!DOCTYPE svg PUBLIC %22-%2F%2FW3C%2F%2FDTD SVG 1.1%2F%2FEN%22 %22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg t%3D%221608519650826%22 class%3D%22icon%22 viewBox%3D%220 0 1024 1024%22 version%3D%221.1%22 xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 p-id%3D%223331%22 width%3D%2232%22 height%3D%2232%22 xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%3Cdefs%3E%3Cstyle type%3D%22text%2Fcss%22%3E%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cpath d%3D%22M298.667 298.667v-128a42.667 42.667 0 1 1 85.333 0v170.666A42.667 42.667 0 0 1 341.333 384H170.667a42.667 42.667 0 1 1 0-85.333h128z m0 426.666h-128a42.667 42.667 0 0 1 0-85.333h170.666A42.667 42.667 0 0 1 384 682.667v170.666a42.667 42.667 0 0 1-85.333 0v-128z m426.666-426.666h128a42.667 42.667 0 0 1 0 85.333H682.667A42.667 42.667 0 0 1 640 341.333V170.667a42.667 42.667 0 0 1 85.333 0v128z m0 426.666v128a42.667 42.667 0 0 1-85.333 0V682.667A42.667 42.667 0 0 1 682.667 640h170.666a42.667 42.667 0 0 1 0 85.333h-128z%22 p-id%3D%223332%22 fill%3D%22%23515151%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E");
-  background-size: 20px;
+    background: center no-repeat url("data:image/svg+xml,%3C%3Fxml version%3D%221.0%22 standalone%3D%22no%22%3F%3E%3C!DOCTYPE svg PUBLIC %22-%2F%2FW3C%2F%2FDTD SVG 1.1%2F%2FEN%22 %22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg t%3D%221608519650826%22 class%3D%22icon%22 viewBox%3D%220 0 1024 1024%22 version%3D%221.1%22 xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 p-id%3D%223331%22 width%3D%2232%22 height%3D%2232%22 xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%3Cdefs%3E%3Cstyle type%3D%22text%2Fcss%22%3E%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cpath d%3D%22M298.667 298.667v-128a42.667 42.667 0 1 1 85.333 0v170.666A42.667 42.667 0 0 1 341.333 384H170.667a42.667 42.667 0 1 1 0-85.333h128z m0 426.666h-128a42.667 42.667 0 0 1 0-85.333h170.666A42.667 42.667 0 0 1 384 682.667v170.666a42.667 42.667 0 0 1-85.333 0v-128z m426.666-426.666h128a42.667 42.667 0 0 1 0 85.333H682.667A42.667 42.667 0 0 1 640 341.333V170.667a42.667 42.667 0 0 1 85.333 0v128z m0 426.666v128a42.667 42.667 0 0 1-85.333 0V682.667A42.667 42.667 0 0 1 682.667 640h170.666a42.667 42.667 0 0 1 0 85.333h-128z%22 p-id%3D%223332%22 fill%3D%22%23515151%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E");
+    background-size: 20px;
 }
+
 
 .__dialog-button[data-dialog-action="close"] {
-  background: center no-repeat url("data:image/svg+xml,%3C%3Fxml version%3D%221.0%22 standalone%3D%22no%22%3F%3E%3C!DOCTYPE svg PUBLIC %22-%2F%2FW3C%2F%2FDTD SVG 1.1%2F%2FEN%22 %22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg t%3D%221608519513329%22 class%3D%22icon%22 viewBox%3D%220 0 1024 1024%22 version%3D%221.1%22 xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 p-id%3D%222753%22 width%3D%2232%22 height%3D%2232%22 xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%3Cdefs%3E%3Cstyle type%3D%22text%2Fcss%22%3E%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cpath d%3D%22M512 451.67l225.835-225.835a42.667 42.667 0 0 1 60.33 60.33L572.331 512l225.834 225.835a42.667 42.667 0 0 1-60.33 60.33L512 572.331 286.165 798.165a42.667 42.667 0 1 1-60.33-60.33L451.669 512 225.835 286.165a42.667 42.667 0 0 1 60.33-60.33L512 451.669z%22 p-id%3D%222754%22 fill%3D%22%23515151%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E");
-  background-size: 20px;
-  height: 50px;
-  width: 40px;
+    width: 40px;
+    height: 50px;
+    background: center no-repeat url("data:image/svg+xml,%3C%3Fxml version%3D%221.0%22 standalone%3D%22no%22%3F%3E%3C!DOCTYPE svg PUBLIC %22-%2F%2FW3C%2F%2FDTD SVG 1.1%2F%2FEN%22 %22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg t%3D%221608519513329%22 class%3D%22icon%22 viewBox%3D%220 0 1024 1024%22 version%3D%221.1%22 xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 p-id%3D%222753%22 width%3D%2232%22 height%3D%2232%22 xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%3Cdefs%3E%3Cstyle type%3D%22text%2Fcss%22%3E%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cpath d%3D%22M512 451.67l225.835-225.835a42.667 42.667 0 0 1 60.33 60.33L572.331 512l225.834 225.835a42.667 42.667 0 0 1-60.33 60.33L512 572.331 286.165 798.165a42.667 42.667 0 1 1-60.33-60.33L451.669 512 225.835 286.165a42.667 42.667 0 0 1 60.33-60.33L512 451.669z%22 p-id%3D%222754%22 fill%3D%22%23515151%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E");
+    background-size: 20px;
 }
+
 
 .__dialog-body {
-  -webkit-box-flex: 1;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  flex-grow: 1;
-  -ms-flex-positive: 1;
-  height: 0;
-  overflow: auto;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    overflow: auto;
 }
+
 
 .__dialog-body-inner {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 10px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 15px;
 }
+
 
 .__dialog-footer {
-  -webkit-box-flex: 0;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  flex-grow: 0;
-  -ms-flex-positive: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
 }
+
 
 .__dialog-footer-inner {
-  align-items: center;
-  -webkit-box-align: center;
-  -webkit-box-pack: end;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  padding: 10px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
 }
+
 
 .__dialog-footer-inner .__dialog-button {
-  padding: 10px 20px;
+    padding: 10px 20px;
 }
+
 
 @-webkit-keyframes __slideInUp {
-  0% {
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-    visibility: visible;
-  }
+    0% {
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+        visibility: visible
+    }
 
-  to {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-  }
+    to {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
 }
 
-@keyframes __slideInUp {
-  0% {
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-    visibility: visible;
-  }
 
-  to {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-  }
+@keyframes __slideInUp {
+    0% {
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+        visibility: visible
+    }
+
+    to {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
 }

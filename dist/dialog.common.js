@@ -5,7 +5,7 @@
  * Copyright 2020-present lzread
  * Released under the MIT license
  *
- * Date: 2020-12-23T07:39:08.247Z
+ * Date: 2020-12-25T06:49:19.144Z
  */
 
 'use strict';
@@ -648,4 +648,3 @@ var Dialog = /*#__PURE__*/function () {
 assign(Dialog.prototype, render, methods, events, handlers, dialogTemplate);
 
 module.exports = Dialog;
-//# sourceMappingURL=dialog.common.js.map

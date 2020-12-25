@@ -5,7 +5,7 @@
  * Copyright 2020-present lzread
  * Released under the MIT license
  *
- * Date: 2020-12-23T07:39:08.247Z
+ * Date: 2020-12-25T06:49:19.144Z
  */
 
 (function (global, factory) {
@@ -654,4 +654,3 @@
   return Dialog;
 
 })));
-//# sourceMappingURL=dialog.js.map
